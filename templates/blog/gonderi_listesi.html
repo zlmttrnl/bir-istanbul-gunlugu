@@ -1,0 +1,65 @@
+{% load static %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>İSTANBUL</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/blog_sitesi.css' %}">
+
+    <style>
+        body{
+            margin-left: 40px;
+            margin-right: 40px;
+            background-color: #F3E2A9;
+            text-align: center;
+
+
+
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+             <h1><a href="/">BİR İSTANBUL GÜNLÜĞÜ</a></h1>
+    </div>
+
+
+    <div class="row">
+
+
+        {% for gonderi in gonderiler %}
+                <div class="post">
+
+                    <h1><a href="">{{ gonderi.baslik }}</a></h1>
+
+
+                    <p>{{ gonderi.tag|linebreaks }}</p>
+                    <div class="gol">
+                    <p>{{ gonderi.icerik|linebreaksbr }}</p>
+                </div>
+
+
+
+                    <div class="date">
+                    <p>Yayın Tarihi: {{ gonderi.y_tarihi }}</p>
+                    </div>
+
+
+                </div>
+         </div>
+     </div>
+     </div>
+        {% endfor %}
+
+</body>
+</html>
+
